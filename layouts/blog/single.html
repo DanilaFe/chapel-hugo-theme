@@ -1,0 +1,46 @@
+{{ define "main" }}
+<h2>{{ .Title }}</h2>
+<div class="post-subscript">
+    <p>
+        {{ range .Params.tags }}
+        <a class="button" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+    </p>
+    <p>Posted on {{ .Date.Format "January 2, 2006" }}.</p>
+</div>
+
+<div class="post-content">
+    {{ if not (eq .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
+    <div class="table-of-contents">
+        <div class="wrapper">
+            <em>Table of Contents</em>
+            {{ .TableOfContents }}
+        </div>
+    </div>
+    {{ end }}
+
+    {{ if .Draft }}
+    <div class="draft-warning">
+        <em>Warning!</em> This post is a draft. At best, it may contain grammar mistakes;
+        at worst, it can include significant errors and bugs. Please
+        use your best judgement!
+    </div>
+    {{ end }}
+
+    {{ .Content }}
+</div>
+{{ end }}
+{{ define "after" }}
+<hr class="container footer-divider">
+<footer class="container">
+    <p>Liked this article? Have any questions or comments?
+    Please don't hesitate to reach out to me at <a href="mailto:danila.fedorin@gmail.com">
+    danila.fedorin@gmail.com</a>! I love receiving emails from readers, and I'm always happy
+    to provide any additional clarification or assistance.</p>
+    <p>I'm also currently looking for Computer Science internships for the summer
+    of 2021. Take a look at my <a href="/Resume-Danila-Fedorin.pdf">resume</a>, 
+    <a href="https://github.com/DanilaFe">GitHub profile</a>,
+    and <a href="/favorites">my favorite articles from this blog</a>
+    to learn more about me!</p>
+</footer>
+{{ end }}

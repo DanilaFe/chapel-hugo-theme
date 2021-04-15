@@ -1,0 +1,10 @@
+{{ define "main" }}
+<h2>{{ .Title }} </h2>
+{{ .Content }}
+
+<ul class="post-list">
+    {{ range (where (where .Site.Pages.ByDate.Reverse "Section" "blog") ".Kind" "!=" "section") }}
+    {{ if .Params.favorite }}{{ partial "post.html" . }}{{ end }}
+    {{ end }}
+</ul>
+{{ end }}

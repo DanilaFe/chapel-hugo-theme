@@ -1,0 +1,17 @@
+{{ define "main" }}
+<h2>{{ .Title }} </h2>
+{{ .Content }}
+
+{{ $search := resources.Get "scss/search.scss" | resources.ToCSS | resources.Minify }}
+<link rel="stylesheet" href="{{ $search.Permalink }}" media="screen">
+
+<div class="stork-wrapper">
+    <div class="stork-input-wrapper">
+        <input class="stork-input" data-stork="blog" placeholder="Search (requires JavaScript)"/>
+    </div>
+    <div class="stork-output" data-stork="blog-output"></div>
+</div>
+
+<script src="https://files.stork-search.net/stork.js"></script>
+<script>stork.register("blog", "/index.st", {"showProgress" : false});</script>
+{{ end }}

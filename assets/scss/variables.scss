@@ -1,0 +1,16 @@
+$container-width: 45rem;
+$container-min-padding: 1rem;
+$container-width-threshold: $container-width + 2 * $container-min-padding;
+$standard-border-width: .075rem;
+
+$primary-color: #36e281;
+$border-color: #bfbfbf;
+$code-color: #f0f0f0;
+$code-border-color: darken($code-color, 10%);
+
+$font-heading: "Lora", serif;
+$font-body: "Raleway", serif;
+$font-code: "Inconsolata", monospace;
+
+$standard-border: $standard-border-width solid $border-color;
+$code-border: $standard-border-width solid $code-border-color;

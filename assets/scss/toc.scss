@@ -1,0 +1,50 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "margin.scss";
+
+$toc-color: $code-color;
+$toc-border-color: $code-border-color;
+
+.table-of-contents {
+    @include margin-content;
+    @include margin-content-left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+
+    em {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.2em;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    #TableOfContents > ul {
+        padding-left: 0;
+    }
+
+    nav {
+        margin: 0px;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 2rem;
+        margin: 0px;
+    }
+
+    a {
+        padding: 0;
+    }
+
+    div.wrapper {
+        @include bordered-block;
+        padding: 1rem;
+        background-color: $toc-color;
+        border-color: $toc-border-color;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,97 @@
+@import "variables.scss";
+
+$code-color-lineno: grey;
+$code-color-keyword: black;
+$code-color-type: black;
+$code-color-comment: grey;
+
+.highlight-label {
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border: $code-border;
+    border-bottom: none;
+
+    a {
+        font-family: $font-code;
+    }
+}
+
+.highlight-group pre {
+    margin: 0;
+}
+
+code {
+  font-family: $font-code;
+  background-color: $code-color;
+  border: $code-border;
+  padding: 0 0.25rem 0 0.25rem;
+}
+
+pre code {
+    display: block;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    overflow: auto;
+}
+
+.chroma {
+    .lntable {
+        border-spacing: 0;
+        padding: 0.5rem 0 0.5rem 0;
+        background-color: $code-color;
+        border-radius: 0;
+        border: $code-border;
+        display: block;
+        overflow: auto;
+        margin-bottom: 1rem;
+
+        td {
+            padding: 0;
+        }
+
+        code {
+            border: none;
+            padding: 0;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        .lntd:last-child {
+            width: 100%;
+        }
+    }
+
+    .lntr {
+        display: table-row;
+    }
+
+    .lnt {
+        display: block;
+        padding: 0 1rem 0 1rem;
+        color: $code-color-lineno;
+    }
+
+    .hl {
+        display: block;
+        background-color: #fffd99; 
+
+        .lnt::before {
+            content: "*";
+        }
+    }
+}
+
+.kr, .k {
+    font-weight: bold;
+    color: $code-color-keyword;
+}
+
+.kt {
+    font-weight: bold;
+    color: $code-color-type;
+}
+
+.c, .c1 {
+    color: $code-color-comment;   
+}

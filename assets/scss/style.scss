@@ -1,0 +1,264 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "toc.scss";
+
+body {
+  font-family: $font-body;
+  font-size: 1.0rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  text-align: justify;
+
+  @include below-container-width {
+    text-align: left;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .1rem;
+  margin-top: .5rem;
+  font-family: $font-heading;
+  font-weight: normal;
+  text-align: center;
+
+  a {
+    border-bottom: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: $container-width;
+  box-sizing: border-box;
+
+  @include below-container-width {
+      padding: 0 $container-min-padding 0 $container-min-padding;
+      margin: 0;
+      max-width: $container-width + 2 * $container-min-padding;
+  }
+
+  @include below-two-margins {
+      left: -($margin-width + $margin-inner-offset + $margin-outer-offset)/2;
+  }
+
+  @include below-one-margin {
+      left: 0;
+  }
+}
+
+.button, input[type="submit"] {
+  padding: 0.5rem;
+  background-color: $primary-color;
+  border: none;
+  color: white;
+  transition: color 0.25s, background-color 0.25s;
+  text-align: left;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover, &:focus {
+    background-color: white;
+    color: $primary-color;
+  }
+}
+
+nav {
+  width: 100%;
+  margin: 0rem 0rem 1rem 0rem;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  a {
+    padding: 0.25rem 0.75rem 0.25rem .75rem;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    border-bottom: none;
+    white-space: nowrap;
+  }
+}
+
+.post-subscript {
+  color: #8f8f8f;
+  text-align: center;
+}
+
+.post-content {
+  margin-top: .5rem;
+}
+
+h1 {
+  font-size: 3.0rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-size: 1.0rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  border-bottom: .2rem solid $primary-color;
+  transition: color 0.25s;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+img {
+  max-width: 100%
+}
+
+table {
+    @include bordered-block;
+    margin: auto;
+    padding: 0.5rem;
+}
+
+tr {
+    @include below-container-width {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+td {
+    @include below-container-width {
+        overflow-x: auto;
+    }
+    padding: 0.5rem;
+}
+
+div.highlight tr {
+    display: table-row;
+}
+
+hr.header-divider {
+    background-color: $primary-color;
+    height: 0.3rem;
+    border: none;
+    border-radius: 0.15rem;
+}
+
+hr.footer-divider {
+    margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-bottom: $standard-border;
+    max-width: $container-width;
+
+    @include below-container-width {
+        max-width: 80%;
+    }
+}
+
+ul.post-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+        @include bordered-block;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    a.post-title {
+        border-bottom: none;
+        font-size: 1.4rem;
+        font-family: $font-heading;
+        text-align: center;
+        display: block;
+    }
+
+    p.post-wordcount {
+        text-align: center;
+        margin-bottom: 0.6rem;
+    }
+}
+
+.katex-html {
+    white-space: nowrap;
+}
+
+figure {
+    img {
+        max-width: 70%;
+        display: block;
+        margin: auto;
+
+        @include below-container-width {
+            max-width: 100%;
+        }
+    }
+
+    figcaption {
+        text-align: center;
+    }
+
+    &.tiny img {
+        max-height: 15rem;
+    }
+
+    &.small img {
+        max-height: 20rem;
+    }
+
+    &.medium img {
+        max-height: 30rem;
+    }
+}
+
+.twitter-tweet {
+    margin: auto;
+}
+
+.draft-warning {
+    @include bordered-block;
+    padding: 0.5rem;
+    background-color: #ffee99;
+    border-color: #f5c827;
+}
+
+.feather {
+  width: 1rem;
+  height: 1rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: currentColor;
+}

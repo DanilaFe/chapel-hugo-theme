@@ -1,0 +1,5 @@
+<li>
+    <a href="{{ .Permalink }}" class="post-title">{{ if .Params.favorite }}{{ partial "icon.html" "star" }}{{ end }} {{ .Title }}</a>
+    <p class="post-wordcount">{{ .WordCount }} words, about {{ .ReadingTime }} minutes to read.</p>
+    <p class="post-preview">{{ .Summary }} . . .</p>
+</li>
