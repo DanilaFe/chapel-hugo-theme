@@ -8,6 +8,9 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Raleway&family=Lora&display=block" media="screen"> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" media="screen">
+    {{ range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | safeURL }}">
+    {{ end -}}
     {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | resources.Minify }}
     {{ $sidenotes := resources.Get "scss/sidenotes.scss" | resources.ToCSS | resources.Minify }}
     {{ $code := resources.Get "scss/code.scss" | resources.ToCSS | resources.Minify }}
