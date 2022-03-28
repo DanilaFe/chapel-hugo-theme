@@ -1,2 +1,2 @@
 {{ partial "geturl.html" (dict "scratch" .Scratch "path" (.Get 0) "submoduleLinks" .Site.Params.submoduleLinks) }}
-{{ partial "group.html" (dict "url" (.Scratch.Get "bestUrl") "path" (.Get 0) "comment" ", entire file" "content" (safeHTML (printf "<pre><code>%s</code></pre>" (readFile (printf "code/%s" (.Get 0)))))) }}
+{{ partial "group.html" (dict "url" (.Scratch.Get "bestUrl") "path" (.Get 0) "comment" ", entire file" "content" (safeHTML (printf "<pre><code>%s</code></pre>" (htmlEscape (readFile (printf "code/%s" (.Get 0))))))) }}
