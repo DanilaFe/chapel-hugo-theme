@@ -271,3 +271,7 @@ figure {
   stroke-linejoin: round;
   fill: currentColor;
 }
+
+.katex * {
+  font-family: unset;
+}
