@@ -275,3 +275,32 @@ figure {
 .katex * {
   font-family: unset;
 }
+
+.dialog {
+    .message {
+        @include bordered-block;
+        display: block;
+        padding: 0.75rem;
+        max-width: 0.8*$container-width;
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+
+        .message-sender {
+            width: 4rem;
+            margin: 0.5rem;
+
+            .feather {
+                width: 2rem;
+                height: 1.6rem;
+            }
+        }
+
+        &.side-answer {
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+    }
+}
