@@ -1,4 +1,10 @@
 <span class="message side-{{ .Get 0 }}">
-    <span class="message-sender">{{ partial "icon.html" "user" }}</span>
-    <span>{{ .Inner }}</span>
+    <span class="message-sender">
+        {{ if (eq (.Get 1) "reader") }}
+        {{ partial "icon.html" "moon" }}
+        {{ else }}
+        {{ partial "icon.html" "sun" }}
+        {{ end }}
+    </span>
+    <span class="message-text">{{ .Inner }}</span>
 </span>
