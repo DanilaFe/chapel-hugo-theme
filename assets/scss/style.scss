@@ -163,6 +163,10 @@ td {
     padding: 0.5rem;
 }
 
+th {
+    padding: 0.5rem;
+}
+
 div.highlight tr {
     display: table-row;
 }
@@ -274,6 +278,13 @@ figure {
 
 .katex * {
   font-family: unset;
+}
+
+.block {
+    @include bordered-block;
+    margin: auto;
+    padding: 0.5rem;
+    width: fit-content;
 }
 
 .dialog {
