@@ -149,10 +149,12 @@ table {
     padding: 0.5rem;
 }
 
-tr {
-    @include below-container-width {
-        display: flex;
-        flex-direction: column;
+.fold-table + table {
+    tr {
+        @include below-container-width {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
@@ -160,11 +162,11 @@ td {
     @include below-container-width {
         overflow-x: auto;
     }
-    padding: 0.5rem;
 }
 
-th {
+td, th {
     padding: 0.5rem;
+    vertical-align: top;
 }
 
 div.highlight tr {
