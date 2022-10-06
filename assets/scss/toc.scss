@@ -3,7 +3,7 @@
 @import "margin.scss";
 
 $toc-color: $code-color;
-$toc-border-color: $code-border-color;
+$toc-border-color: darken($code-color, 10%);
 
 .table-of-contents {
     @include margin-content;

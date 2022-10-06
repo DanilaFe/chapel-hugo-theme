@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html data-theme="light" lang="{{ .Site.Language.Lang }}">
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-        <div class="container"><hr class="header-divider"></div>
         <main class="container">
         {{- block "main" . }}{{- end }}
         </main>

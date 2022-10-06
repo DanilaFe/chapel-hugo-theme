@@ -1,4 +1,5 @@
 @import "variables.scss";
+@import "mixins.scss";
 
 $code-color-lineno: grey;
 $code-color-keyword: black;
@@ -7,7 +8,6 @@ $code-color-comment: grey;
 
 .highlight-label {
     padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-    border: $code-border;
     border-bottom: none;
 
     a {
@@ -19,18 +19,21 @@ $code-color-comment: grey;
     margin: 0;
 }
 
-code {
+code, pre.code {
   font-family: $font-code;
-  background-color: $code-color;
-  border: $code-border;
   padding: 0 0.25rem 0 0.25rem;
 }
 
-pre code {
+pre code, pre.code {
     display: block;
     box-sizing: border-box;
     padding: 0.5rem;
     overflow: auto;
+}
+
+pre {
+    @include bordered-block;
+    box-shadow: 0 0 1rem rgba(black, 0.08);
 }
 
 .chroma {
@@ -39,7 +42,6 @@ pre code {
         padding: 0.5rem 0 0.5rem 0;
         background-color: $code-color;
         border-radius: 0;
-        border: $code-border;
         display: block;
         overflow: auto;
         margin-bottom: 1rem;
