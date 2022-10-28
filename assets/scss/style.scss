@@ -309,7 +309,8 @@ main {
     select {
         -webkit-appearance:none;
         width: 100%;
-        border-color: $border-color;
+        background-color: white;
+        border: $standard-border-width solid $border-color;
         padding: 0.5em;
         display: block;
         margin-bottom: 0;
