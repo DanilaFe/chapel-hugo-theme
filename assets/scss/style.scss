@@ -56,10 +56,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button, input[type="submit"] {
-  padding: 0.5rem;
-  background-color: $primary-color;
-  border: none;
-  color: white;
+  @include bordered-block;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   transition: color 0.25s, background-color 0.25s;
   text-align: left;
 
@@ -94,7 +92,10 @@ nav {
 
 .post-subscript {
   color: #8f8f8f;
-  text-align: center;
+
+  p {
+    margin: 0.25rem 0 0.25rem 0;
+  }
 }
 
 .post-content {
@@ -232,6 +233,7 @@ figure {
     padding: 0.5rem;
     background-color: #ffee99;
     border-color: #f5c827;
+    margin-top: 1.5rem;
 }
 
 .feather {
