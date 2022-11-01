@@ -3,7 +3,7 @@
 
 Recent posts:
 <ul class="post-list">
-    {{ range first 10 (where (where .Site.Pages.ByDate.Reverse "Section" "blog") ".Kind" "!=" "section") }}
+    {{ range first 10 (where (where .Site.Pages.ByDate.Reverse "Section" "posts") ".Kind" "!=" "section") }}
     {{ partial "post.html" . }}
     {{ end }}
 </ul>
