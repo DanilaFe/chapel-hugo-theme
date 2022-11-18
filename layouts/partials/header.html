@@ -3,11 +3,10 @@
 </div>
 <nav>
     <div class="container">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="https://github.com/DanilaFe">GitHub</a>
-        <a href="/tags">Tags</a>
-        <a href="/search">Search</a>
-        <a href="/blog">All Posts</a>
+        <a href="{{ .Site.BaseURL | relLangURL }}">Home</a>
+        <a href="{{ .Site.BaseURL }}/about">About</a>
+        <a href="https://github.com/chapel-lang/chapel">GitHub</a>
+        <a href="{{ .Site.BaseURL }}/tags">Tags</a>
+        <a href="{{ .Site.BaseURL }}/posts">All Posts</a>
     </div>
 </nav>
