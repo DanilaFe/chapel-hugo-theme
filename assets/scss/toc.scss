@@ -37,6 +37,10 @@ $toc-border-color: darken($code-color, 10%);
 
     a {
         padding: 0;
+        margin: 0;
+        white-space: normal;
+        text-indent: -0.5em;
+        margin-left: 0.5em;
     }
 
     div.wrapper {
