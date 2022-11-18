@@ -89,16 +89,23 @@ pre {
     }
 }
 
-.kr, .k {
-    font-weight: bold;
-    color: $code-color-keyword;
+.file {
+    text-align: center;
+
+    pre, .lntable {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
 }
 
-.kt {
-    font-weight: bold;
-    color: $code-color-type;
-}
+.file-header {
+    @include bordered-block;
+    padding: 0.5rem;
 
-.c, .c1 {
-    color: $code-color-comment;   
+    // Keep styling for closed summaries
+    &:not(details:not([open]) summary) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: none;
+    }
 }
