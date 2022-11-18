@@ -1,2 +1,0 @@
-{{ partial "geturl.html" (dict "scratch" .Scratch "path" (.Get 1) "submoduleLinks" .Site.Params.submoduleLinks) }}
-{{ partial "highlightgroup.html" (dict "url" (.Scratch.Get "bestUrl") "path" (.Get 1) "comment" ", entire file" "code" (readFile (printf "code/%s" (.Get 1))) "language" (.Get 0) "opts" "linenos=table") }}

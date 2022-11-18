@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#1dc868">
+    <meta name="theme-color" content="#00cbff">
     {{ if .Description }}
     <meta name="description" content="{{ .Description }}">
     {{ end }}
@@ -16,7 +16,7 @@
     {{ $sidenotes := resources.Get "scss/sidenotes.scss" | resources.ToCSS | resources.Minify }}
     {{ $code := resources.Get "scss/code.scss" | resources.ToCSS | resources.Minify }}
     {{ $syntax := resources.Get "css/syntax.css" | resources.Minify }}
-    {{ $icon := resources.Get "img/favicon.png" }}
+    {{ $icon := resources.Get "img/favicon.ico" }}
     <style>.sidenote-checkbox { display: none; }</style>
     <style>.feather { width: 1rem; height: 1rem; }</style>
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">
